@@ -1,0 +1,35 @@
+<div class="col-sm-8 col-sm-offset-2">
+  <nav>
+    <div class="container-fluid bg-primary text-center">Bloggy</div>
+
+  </nav>
+
+  <h1> Administration Page</h1>
+
+  <div class="d-flex bg-primary position-relative" style="height: 150px;" *ngFor="let post of posts">
+    <div class="position-relative">
+      <div class="col-md-2 mt-3 position-absolute top-0 start-0 " style="height: 130px; width:  210px">
+        <a [routerLink]="['/post/{ID}']">
+          <img [src]="post.image_url" class="img-thumbnail" alt="..." style="height: 130px; width:  210px;" >
+        </a>
+    </div>
+      
+
+    </div>
+
+
+    <div class="position-relative">
+      <h1 routerLink="/post/{{post.id}} "> {{post.title}}</h1>
+      <div class="position-absolute position-absolute top-0 end-0 ">
+        {{post.created_at | date:'dd/MM/yyyy'}}
+      </div>
+      <p> {{post.resume}} </p>
+      <button type="button" class="btn btn-success btn-rounded" style="height: 30px; width: 210px;" (click)="readmore()">
+        Read more...
+      </button>
+
+    </div>
+    
+  </div>
+  
+</div>

@@ -1,0 +1,48 @@
+<div class="col-sm-8 col-sm-offset-2">
+    
+
+
+<nav class="navbar navbar-default">
+  <div class="container-fluid">Bloggy</div>
+
+</nav>
+  <h1>Create post</h1>
+
+  
+  <div  class="card-body" novalidate (ngSubmit)="saveData()" >
+      <form>
+          <div class="form-group">
+              <label for="exampleFormControlInput1">Post title</label>
+              <input type="Post title" class="form-control" id="Post_title" name="Post_title" placeholder="My new post" [(ngModel)]="post_title">
+            </div>
+          
+          <div class="form-group">
+            <label for="exampleFormControlSelect1">Autor</label>
+            <select class="form-control" id="autor" type="text" name="autor" placeholder="Select an autor" [(ngModel)]="author_id">
+              <option *ngFor="let user of list" value="{{user.id}}">{{user.full_name}}</option>
+            </select>
+          </div>
+          <div class="form-group">
+              <label for="exampleFormControlInput1">Image</label>
+              <input type="text" class="form-control" name="image" id="image" placeholder="image URL" [(ngModel)]="image_url">
+          </div>
+          <div class="form-group">
+            <label for="exampleFormControlTextarea1" >Post resume </label>
+            <textarea class="form-control" type="text" id="post_resume" name="Post_resume" type="text" rows="3" placeholder="Post resume" [(ngModel)]="post_resume"></textarea>
+          </div>
+          <div class="form-group">
+            <label for="exampleFormControlTextarea1" >Content </label>
+            
+            <textarea class="form-control" id="content" type="text" name="content" rows="4" placeholder="Content" [(ngModel)]="content"></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary btn-lg btn-block" (click)="saveData()"> Save</button>
+        </form> 
+    </div> 
+  
+  
+  
+  
+  
+  
+
+</div>

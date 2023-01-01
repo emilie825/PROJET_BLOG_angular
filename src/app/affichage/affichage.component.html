@@ -1,0 +1,49 @@
+<div class="col-sm-8 col-sm-offset-2">
+  <nav>
+    <div class="container-fluid bg-primary text-center">Bloggy</div>
+  
+  </nav>
+  
+  
+  <h1> Administration Page</h1>
+    
+    <button type="button" class="btn btn-succes btn-sm bg-success" > <a routerLink="/create">+ Create Post</a> </button>
+  
+  <div class="table-responsive">
+    <table class="table table-striped" >
+      <thead>
+        <td>ID</td>
+        <td>Image</td>
+        <td>Title</td>
+        <td>Autor</td>
+        <td>Date</td>
+        <td>Actions</td>
+      </thead>
+      <tbody>
+       <tr *ngFor="let post of posts">
+         <td>{{post.id}}</td>
+         <td> <img [src]="post.image_url" alt="" style="width: 20px; height: 20px"></td>
+         <td>{{post.title}}</td>
+         <td>{{post.author_id}}</td>
+         <td>{{post.created_at}} </td>
+         <td>
+          <a [routerLink]="['/put/post/{ID}']">
+            <button mat-icon-button color="dark" >
+              <mat-icon>edit</mat-icon>
+            </button>
+          </a>
+          
+          <button mat-icon-button color="dark" (click)="deletePost()">
+            <mat-icon>delete</mat-icon>
+           </button>
+         </td>
+       </tr>
+      </tbody>
+    </table>
+   
+    
+  </div>
+   
+  
+  
+</div>
